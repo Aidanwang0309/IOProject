@@ -10,9 +10,9 @@ void ofApp::setup(){
     clearAlpha = 0.5;
     
     prevx = prevy = degree = radian = x = y = 0.0f;
-    amp = 270; // size of the rose
-    x0 = y0 = 400; // this becomes the center
-    petals = 12; // number of petals
+    amp = 50; // size of the rose
+    x0 = y0 = 0; // this becomes the center
+    petals = 6; // number of petals
     ofSetFrameRate(30);
 }
 
@@ -55,9 +55,25 @@ void ofApp::draw(){
         float time = ofGetElapsedTimef();
         float noise = ofSignedNoise(time * timeScale) * 20.0;
         ofRotate(noise);
-    
-        patternGenerating(6);
-    }
+        if(pattern==1){
+            patternGenerating(1);
+        }
+        else if(pattern==2){
+            patternGenerating(2);
+        }
+        else if(pattern==3){
+            patternGenerating(3);
+        }
+        else if(pattern==4){
+            patternGenerating(4);
+        }
+        else if(pattern==5){
+            patternGenerating(5);
+        }
+        else if(pattern==6){
+            patternGenerating(6);
+        }
+            }
     ofPopMatrix();
 }
 
@@ -78,6 +94,25 @@ void ofApp::keyPressed(int key){
             ofSetFrameRate(60);
             ofEndSaveScreenAsPDF();
         }
+    }
+    
+    else if (key=='1'){
+        pattern=1;
+    }
+    else if (key=='2'){
+        pattern=2;
+    }
+    else if (key=='3'){
+        pattern=3;
+    }
+    else if (key=='4'){
+        pattern=4;
+    }
+    else if (key=='5'){
+        pattern=5;
+    }
+    else if (key=='6'){
+        pattern=6;
     }
 }
 

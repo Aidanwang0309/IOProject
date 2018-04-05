@@ -30,4 +30,5 @@ class ofApp : public ofBaseApp{
     
     float timeScale;
     float clearAlpha;
+    int pattern;
 };
